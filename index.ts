@@ -19,12 +19,12 @@ const app = new Koa()
 const router = new Router()
 
 router.get("/deploy", async (ctx: Context, next: any) => {
-    const response = (await client).execCommand("echo hi")
+    const response = await (await client).execCommand("echo hi")
     console.log(response)
 })
 
 router.post("/github/webhook", async (ctx: Context, next: any) => {
-    const response = (await client).execCommand("echo hi")
+    const response = await (await client).execCommand("echo hi")
     console.log(response)
 })
 
