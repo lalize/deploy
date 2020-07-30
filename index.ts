@@ -1,10 +1,10 @@
 import Koa, { Context } from "koa"
 import Router from "koa-router"
 import bodyParser from "koa-bodyparser"
-//import Ssh from "node-ssh"
+import Ssh from "node-ssh"
 import fs from "fs"
 import { argv } from "yargs"
-/*
+
 const ssh = new Ssh()
 
 const client = ssh.connect({
@@ -14,19 +14,18 @@ const client = ssh.connect({
     privateKey: fs.readFileSync(<string>argv.i, "utf-8")
 })
 
-*/
-
 const app = new Koa()
 
 const router = new Router()
 
+router.get("/deploy", async (ctx: Context, next: any) => {
+    const response = (await client).execCommand("echo hi")
+    console.log(response)
+})
+
 router.post("/github/webhook", async (ctx: Context, next: any) => {
-    console.log(ctx.origin)
-    console.log(ctx.host)
-    console.log(ctx.hostname)
-    console.log(ctx.url)
-    console.log(ctx.request.body.repository.url)
-    next();
+    const response = (await client).execCommand("echo hi")
+    console.log(response)
 })
 
 app.use(bodyParser())
