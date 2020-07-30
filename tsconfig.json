@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": [
+      "ESNext"
+    ],
+    "module": "commonjs",
+    "outDir": "./dist",
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "noImplicitAny": false
+  }
+}
