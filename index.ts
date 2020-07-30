@@ -21,7 +21,8 @@ const app = new Koa()
 const router = new Router()
 
 router.post("/github/webhook", async (ctx: Context, next: any) => {
-    console.log(ctx.request.origin)
+    console.log(ctx.origin)
+    console.log(ctx.url)
     console.log(ctx.request.body.repository.url)
     next();
 })
