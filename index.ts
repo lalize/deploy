@@ -22,6 +22,8 @@ const router = new Router()
 
 router.post("/github/webhook", async (ctx: Context, next: any) => {
     console.log(ctx.origin)
+    console.log(ctx.host)
+    console.log(ctx.hostname)
     console.log(ctx.url)
     console.log(ctx.request.body.repository.url)
     next();
